@@ -14,8 +14,8 @@ const (
 type MarotoGridPart interface {
 	// Grid System.
 	Row(height float64, closure func())
-	Col(width uint, closure func())
-	ColSpace(width uint)
+	Col(width float64, closure func())
+	ColSpace(width float64)
 
 	// Helpers.
 	SetBackgroundColor(color color.Color)

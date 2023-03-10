@@ -24,8 +24,8 @@ const (
 type Maroto interface {
 	// Grid System
 	Row(height float64, closure func())
-	Col(width uint, closure func())
-	ColSpace(gridSize uint)
+	Col(width float64, closure func())
+	ColSpace(gridSize float64)
 
 	// Registers
 	RegisterHeader(closure func())
@@ -193,7 +193,7 @@ func (s *PdfMaroto) AddPage() {
 	maxOffsetPage := int(pageHeight - bottom - top)
 
 	s.Row(float64(maxOffsetPage-totalOffsetY), func() {
-		s.ColSpace(uint(consts.MaxGridSum))
+		s.ColSpace(float64(consts.MaxGridSum))
 	})
 }
 
@@ -399,9 +399,9 @@ func (s *PdfMaroto) Row(height float64, closure func()) {
 // Col create a column inside a row and enable to add
 // components inside. Maroto do not support recursive
 // columns or rows inside columns.
-func (s *PdfMaroto) Col(width uint, closure func()) {
+func (s *PdfMaroto) Col(width float64, closure func()) {
 	if width == 0 {
-		width = uint(consts.MaxGridSum)
+		width = float64(consts.MaxGridSum)
 	}
 
 	percent := float64(width) / consts.MaxGridSum
@@ -420,7 +420,7 @@ func (s *PdfMaroto) Col(width uint, closure func()) {
 }
 
 // ColSpace create an empty column inside a row.
-func (s *PdfMaroto) ColSpace(gridSize uint) {
+func (s *PdfMaroto) ColSpace(gridSize float64) {
 	s.Col(gridSize, func() {})
 }
 
@@ -679,7 +679,7 @@ func (s *PdfMaroto) footer() {
 	maxOffsetPage := int(pageHeight - bottom - top)
 
 	s.Row(float64(maxOffsetPage-totalOffsetY), func() {
-		s.ColSpace(uint(consts.MaxGridSum))
+		s.ColSpace(float64(consts.MaxGridSum))
 	})
 
 	if s.footerClosure != nil {
@@ -694,7 +694,7 @@ func (s *PdfMaroto) header() {
 	s.SetBackgroundColor(color.NewWhite())
 
 	s.Row(s.marginTop, func() {
-		s.ColSpace(uint(consts.MaxGridSum))
+		s.ColSpace(float64(consts.MaxGridSum))
 	})
 
 	if s.headerClosure != nil {

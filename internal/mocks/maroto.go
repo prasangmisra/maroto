@@ -61,7 +61,7 @@ func (_m *Maroto) Base64Image(base64 string, extension consts.Extension, prop ..
 }
 
 // Col provides a mock function with given fields: closure
-func (_m *Maroto) Col(width uint, closure func()) {
+func (_m *Maroto) Col(width float64, closure func()) {
 	_m.Called(closure)
 }
 

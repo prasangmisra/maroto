@@ -105,7 +105,7 @@ type TableListContent struct {
 	// the sum of the values cannot be greater than 12, if this
 	// value is not provided the width of all columns will be the
 	// same.
-	GridSizes []uint
+	GridSizes []float64
 }
 
 // TableList represents properties from a TableList.
@@ -306,8 +306,8 @@ func (s *TableList) MakeValid(header []string, defaultFamily string) {
 	}
 
 	if len(s.HeaderProp.GridSizes) == 0 {
-		gridSize := uint(consts.MaxGridSum / float64(len(header)))
-		s.HeaderProp.GridSizes = []uint{}
+		gridSize := float64(consts.MaxGridSum / float64(len(header)))
+		s.HeaderProp.GridSizes = []float64{}
 
 		for range header {
 			s.HeaderProp.GridSizes = append(s.HeaderProp.GridSizes, gridSize)
@@ -331,8 +331,8 @@ func (s *TableList) MakeValid(header []string, defaultFamily string) {
 	}
 
 	if len(s.ContentProp.GridSizes) == 0 {
-		gridSize := uint(consts.MaxGridSum / float64(len(header)))
-		s.ContentProp.GridSizes = []uint{}
+		gridSize := float64(consts.MaxGridSum / float64(len(header)))
+		s.ContentProp.GridSizes = []float64{}
 
 		for range header {
 			s.ContentProp.GridSizes = append(s.ContentProp.GridSizes, gridSize)
