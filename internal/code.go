@@ -3,9 +3,9 @@ package internal
 import (
 	"github.com/boombuler/barcode/code128"
 	"github.com/boombuler/barcode/qr"
-	"github.com/johnfercher/maroto/internal/fpdf"
-	"github.com/johnfercher/maroto/pkg/props"
 	"github.com/jung-kurt/gofpdf/contrib/barcode"
+	"github.com/prasangmisra/maroto/internal/fpdf"
+	"github.com/prasangmisra/maroto/pkg/props"
 )
 
 // Code is the abstraction which deals of how to add QrCodes or Barcode in a PDF.
