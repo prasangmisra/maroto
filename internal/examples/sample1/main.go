@@ -70,7 +70,7 @@ func main() {
 		m.Line(1.0,
 			props.Line{
 				Color: color.Color{
-					255, 0, 0,
+					Red: 255, Green: 0, Blue: 0,
 				},
 			})
 
@@ -174,11 +174,11 @@ func main() {
 
 	m.TableList(headerSmall, smallContent, props.TableList{
 		ContentProp: props.TableListContent{
-			GridSizes: []uint{3, 6, 3},
-			Color:     color.Color{100, 0, 0},
+			GridSizes: []float64{3, 6, 3},
+			Color:     color.Color{Red: 100, Green: 0, Blue: 0},
 		},
 		HeaderProp: props.TableListContent{
-			GridSizes: []uint{3, 6, 3},
+			GridSizes: []float64{3, 6, 3},
 		},
 		AlternatedBackground: &color.Color{
 			Red:   200,
@@ -203,13 +203,13 @@ func main() {
 		ContentProp: props.TableListContent{
 			Family:    consts.Courier,
 			Style:     consts.Italic,
-			GridSizes: []uint{5, 5, 2},
+			GridSizes: []float64{5, 5, 2},
 		},
 		HeaderProp: props.TableListContent{
-			GridSizes: []uint{5, 5, 2},
+			GridSizes: []float64{5, 5, 2},
 			Family:    consts.Courier,
 			Style:     consts.BoldItalic,
-			Color:     color.Color{100, 0, 0},
+			Color:     color.Color{Red: 100, Green: 0, Blue: 0},
 		},
 		Align: consts.Center,
 		Line:  true,

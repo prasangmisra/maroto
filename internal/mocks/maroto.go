@@ -66,7 +66,7 @@ func (_m *Maroto) Col(width float64, closure func()) {
 }
 
 // ColSpace provides a mock function with given fields:
-func (_m *Maroto) ColSpace(uint) {
+func (_m *Maroto) ColSpace(float64) {
 	_m.Called()
 }
 

@@ -49,10 +49,15 @@ func (s *text) Add(text string, cell Cell, textProp props.Text) {
 	accumulateOffsetY := 0.0
 
 	// If should add one line
-	if stringWidth < cell.Width || textProp.Extrapolate || len(words) == 1 {
+	if (stringWidth < cell.Width || textProp.Extrapolate || len(words) == 1) && !(strings.Contains(unicodeText, "\n")) {
 		s.addLine(textProp, cell.X, cell.Width, cell.Y, stringWidth, unicodeText)
 	} else {
-		lines := s.getLines(words, cell.Width)
+		var lines []string
+		if strings.Contains(unicodeText, "\n") {
+			lines = strings.Split(unicodeText, "\n")
+		} else {
+			lines = s.getLines(words, cell.Width)
+		}
 
 		for index, line := range lines {
 			lineWidth := s.pdf.GetStringWidth(line)

@@ -112,11 +112,11 @@ func main() {
 	m.TableList(header, contents, props.TableList{
 		HeaderProp: props.TableListContent{
 			Size:      9,
-			GridSizes: []uint{3, 4, 2, 3},
+			GridSizes: []float64{3, 4, 2, 3},
 		},
 		ContentProp: props.TableListContent{
 			Size:      8,
-			GridSizes: []uint{3, 4, 2, 3},
+			GridSizes: []float64{3, 4, 2, 3},
 		},
 		Align:                consts.Center,
 		AlternatedBackground: &grayColor,

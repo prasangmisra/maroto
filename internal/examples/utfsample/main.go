@@ -33,10 +33,10 @@ func main() {
 		HeaderProp: props.TableListContent{
 			Family:    consts.Arial,
 			Style:     consts.Bold,
-			GridSizes: []uint{4, 8},
+			GridSizes: []float64{4, 8},
 		},
 		ContentProp: props.TableListContent{
-			GridSizes: []uint{4, 8},
+			GridSizes: []float64{4, 8},
 		},
 	})
 

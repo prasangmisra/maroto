@@ -208,13 +208,13 @@ func ExamplePdfMaroto_TableList() {
 			Family:    consts.Arial,
 			Style:     consts.Bold,
 			Size:      11.0,
-			GridSizes: []uint{3, 9},
+			GridSizes: []float64{3, 9},
 		},
 		ContentProp: props.TableListContent{
 			Family:    consts.Courier,
 			Style:     consts.Normal,
 			Size:      10.0,
-			GridSizes: []uint{3, 9},
+			GridSizes: []float64{3, 9},
 		},
 		Align: consts.Center,
 		AlternatedBackground: &color.Color{

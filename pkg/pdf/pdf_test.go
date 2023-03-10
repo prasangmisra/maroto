@@ -2524,7 +2524,7 @@ func TestFpdfMaroto_GetCurrentPage(t *testing.T) {
 				headers, contents := getContents()
 				m.Row(20, func() {
 					for _, header := range headers {
-						m.Col(uint(12/len(headers)), func() {
+						m.Col(float64(12/len(headers)), func() {
 							m.Text(header)
 						})
 					}
@@ -2533,7 +2533,7 @@ func TestFpdfMaroto_GetCurrentPage(t *testing.T) {
 				for _, content := range contents {
 					m.Row(20, func() {
 						for _, txt := range content {
-							m.Col(uint(12/len(contents)), func() {
+							m.Col(float64(12/len(contents)), func() {
 								m.Text(txt)
 							})
 						}
